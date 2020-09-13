@@ -37,9 +37,9 @@ label0=Label(root,text="Descargar cotizacion acciones", font=("Helvetica", 16), 
 label1=Label(root,text="Ingrese TICKER: ",anchor="w", font=("Helvetica", 10)).grid(row=1, column=0)
 entry1=Entry(root,textvariable=ticker_gui).grid(row=1, column=1)
 label2=Label(root, text="Ingrese fecha Inicial: ", font=("Helvetica", 10)).grid(row=2,column=0)
-fecha_st= DateEntry(root, width=12, background='darkblue',foreground='white', borderwidth=2, textvariable=fecha_ini).grid(row=3,column=0)
+fecha_st= DateEntry(root, width=12, background='darkblue',foreground='white', borderwidth=2, textvariable=fecha_ini, date_pattern='mm/dd/yyyy').grid(row=3,column=0)
 label2=Label(root, text="Ingrese fecha Inicial: ", font=("Helvetica", 10)).grid(row=4,column=0)
-fecha_end= DateEntry(root, width=12, background='darkblue',foreground='white', borderwidth=2, textvariable=fecha_fin).grid(row=5,column=0)
+fecha_end= DateEntry(root, width=12, background='darkblue',foreground='white', borderwidth=2, textvariable=fecha_fin, date_pattern='mm/dd/yyyy').grid(row=5,column=0)
 boton_obtener=Button(root, text="Generar CSV", command=get_data).grid(row=6, column=0)
 
 
