@@ -30,7 +30,7 @@ def save():
 
 root=Tk()
 root.title("Get Quotes")
-root.geometry("400x400")
+root.geometry("300x150")
 
 
 ticker_gui=StringVar()
@@ -44,7 +44,7 @@ label2=Label(root, text="Ingrese fecha Inicial: ", font=("Helvetica", 10)).grid(
 fecha_st= DateEntry(root, width=12, background='darkblue',foreground='white', borderwidth=2, textvariable=fecha_ini, date_pattern='mm/dd/yyyy').grid(row=3,column=0)
 label2=Label(root, text="Ingrese fecha Inicial: ", font=("Helvetica", 10)).grid(row=4,column=0)
 fecha_end= DateEntry(root, width=12, background='darkblue',foreground='white', borderwidth=2, textvariable=fecha_fin, date_pattern='mm/dd/yyyy').grid(row=5,column=0)
-boton_obtener=Button(root, text="Generar CSV", command=save).grid(row=6, column=0)
+boton_obtener=Button(root, text="Generar CSV", command=save).grid(row=4, column=1)
 
 
 
