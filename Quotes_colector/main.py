@@ -2,18 +2,19 @@ from conversor_fecha import convert_date
 from tkinter import *
 from tkinter import ttk
 from tkcalendar import Calendar, DateEntry
+from tkinter.filedialog import asksaveasfile 
 
 import pandas as pd 
 import pandas_datareader.data as web
 import datetime as dt 
 
-def get_data():
+def get_data(route):
 	ticker=ticker_gui.get()
 	inicio=convert_date(fecha_ini.get())
 	fin=convert_date(fecha_fin.get())
 
 	quote=get_price(ticker,inicio,fin)
-	quote.to_csv(ticker+'.csv')
+	quote.to_csv(route)
 
 def get_price(ticker,start,To):
 
@@ -23,8 +24,9 @@ def get_price(ticker,start,To):
 
 	return stk_q
 def save():
-
-
+	files = [('CSV Files', '*.csv')]
+	file = asksaveasfile(mode='a',filetypes = files, defaultextension = files, initialfile=ticker_gui.get())
+	get_data(file.name)
 
 root=Tk()
 root.title("Get Quotes")
